@@ -1,0 +1,40 @@
+<div class="container-sm">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="text-center" >My To Do List</h3>
+    </div>
+  </div>
+  
+ 
+  <!-- <label  class="form-label" for="addItemInput">What would you like to do today?</label>
+  <input #newItem placeholder="add an item"
+  (keyup.enter) = "addItem(newItem.value); newItem.value = ''"
+  class="lg-text-input"
+  id="addItemInput" />
+  <button class="btn-primary" (click)="addItem(newItem.value)">Add</button>  -->
+  
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">What would you like to do today?</span>
+    <input #newItem type="text"
+    (keyup.enter) = "addItem(newItem.value); newItem.value = ''"
+    class="form-control" placeholder="New ToDo Item" aria-label="Username" aria-describedby="basic-addon1">
+    <button (click)="addItem(newItem.value)"
+    class="btn btn-outline-primary" type="button" id="inputGroupFileAddon04">Add</button>
+  </div>
+  <div class="card" *ngFor="let item of allItems; let i= index">
+    <div class="card-header">
+      <span class="badge bg-primary">ToDo Item {{i+1}}</span>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p class="text-center">{{item.description}}</p>
+      </blockquote>
+    </div>
+  </div>
+  
+  
+<!--   <ul class="list-group">
+    <li class="list-group-item"  *ngFor="let item of allItems">{{item.description}}</li>
+  </ul> -->
+</div>
+
